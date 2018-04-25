@@ -1,0 +1,35 @@
+<div class="container box-prodotto" fxLayout="row">
+	<div fxLayoutAlign="center" fxFlex="20%" *ngIf="prodotto.multimedia[0]">
+		<a href={{prodotto.urlEsterna}} target="_blank"><img
+			src={{prodotto.multimedia[1].uri}} title={{prodotto.nomeProdotto}} /></a>
+	</div>
+	<div fxFlex="50%">
+		<span>{{prodotto.nomeProdotto}}</span> <span>{{prodotto.descrizioneBreve}}</span>
+	</div>
+	<div fxLayout="column" fxLayoutAlign="flex-end center" fxFlex="30%">
+		<div class="container" fxLayout="row" fxLayoutGap="10px">
+			<div class="padd5">
+				<span class="prezzoFinale">{{prodotto.prezzoOfferta |
+					currency:'EUR':'true':'1.2-2'}}</span>
+			</div>
+			<div class="padd5">
+				<span class="strikethrough prezzoListino"
+					*ngIf="prodotto.percentualeSalvata">{{prodotto.prezzoListino
+					| currency:'EUR':'true':'1.2-2'}}</span> <span class="prezzoFinale"
+					*ngIf="!prodotto.percentualeSalvata">{{prodotto.prezzoListino
+					| currency:'EUR':'true':'1.2-2'}}</span>
+			</div>
+		</div>
+		<div class="padd5" *ngIf="prodotto.percentualeSalvata">
+			<span>Stai risparmiando {{prodotto.prezzoRisparmiato |
+				currency:'EUR':'true':'1.2-2'}} ({{prodotto.percentualeSalvata}}%)</span>
+		</div>
+		<div class="padd5 width100Perc">
+			<button mat-button class="buttonVai">
+				<span>Scopri l'offerta su </span><span class="fontSizeMerchant">Amazon</span>
+			</button>
+		</div>
+	</div>
+</div>
+
+

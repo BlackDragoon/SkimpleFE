@@ -1,0 +1,79 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* @font-face {
+	font-family: 'tigoFont';
+	src: url('assets/fonts/Tigo.otf') format('opentype');
+} */
+@font-face {
+	font-family: 'tigoFont';
+	src: url('assets/fonts/FortuneCity.ttf');
+	src: url('assets/fonts/FortuneCity.ttf?#iefix')
+		format('embedded-opentype');
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0px;
+	color: #000054;
+}
+
+button:focus {
+	outline: none !important;
+}
+
+input:focus {
+	outline: none !important;
+}
+
+.buttonVai {
+	background: linear-gradient(to right, #23d352 0%, #1c8a39 100%);
+	color: white !important;
+	border-radius: 5px !important;
+	min-height: 50px;
+}
+
+.strikethrough {
+	position: relative;
+}
+
+.strikethrough:before {
+	position: absolute;
+	color: red;
+	content: "";
+	left: 0;
+	top: 50%;
+	right: 0;
+	border-top: 1px solid;
+	border-color: inherit;
+	-webkit-transform: rotate(-5deg);
+	-moz-transform: rotate(-5deg);
+	-ms-transform: rotate(-5deg);
+	-o-transform: rotate(-5deg);
+	transform: rotate(-5deg);
+	content: "";
+}
+
+div.fixedHeightContainer {
+	height: 450px;
+	border-style: solid;
+	border-color: lightgrey;
+	border-radius: 5px;
+	border-width: 1px;
+	background-color: white;
+}
+
+.title {
+	background-color: white;
+	border-radius: 5px 5px 0px 0px;
+	min-height: 30px;
+	margin-top: -15px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.title>span {
+	color: #000054; font-size : 16px;
+	font-weight: bold;
+	font-size: 16px;
+}

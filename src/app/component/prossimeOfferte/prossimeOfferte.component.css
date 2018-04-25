@@ -1,0 +1,13 @@
+.content {
+	height: 420px;
+	padding: 3px;
+	overflow: auto;
+}
+
+hr {
+	width: 80%;
+}
+
+.bomba {
+	height: 30px;
+}

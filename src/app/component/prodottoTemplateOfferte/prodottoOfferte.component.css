@@ -1,0 +1,113 @@
+.rettangolo {
+	width: 80px;
+	height: 20px;
+	background: #c90e13;
+}
+
+.fontSizeMerchant {
+	font-size: 16px;
+}
+
+.fontButton {
+	font-size: 12px;
+}
+
+.prezzoFinale {
+	font-size: 22px;
+	color: #1c8c3a;
+}
+
+span.prezzoFinale>i {
+	font-size: 18px;
+}
+
+span.prezzoListino>i {
+	font-size: 12px;
+}
+
+.prezzoListino {
+	font-size: 14px;
+	color: #c90e13;
+}
+
+.padd5 {
+	padding-bottom: 5px;
+}
+
+.widthAndSpace {
+	width: 100%;
+	white-space: initial;
+	min-height: 10px;
+}
+
+.box-prodotto {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	min-height: 80px;
+	border-bottom: solid 1px lightgrey;
+	padding-bottom: 30px;
+	padding-top: 20px;
+}
+
+.minMaxHeight100 {
+	min-height: 100px;
+	max-height: 100px;
+}
+
+.templateOfferte:hover {
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: 0px 1px;
+	border-style: solid;
+	border-color: gray;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.cerchio-offerta {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 10px;
+	right: 10px;
+	background-color: green;
+	opacity: 0.8;
+	border-radius: 50px;
+	color: white;
+}
+
+.circle {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 10px;
+	right: 10px;
+	border: 1px solid #000;
+	background: #fff;
+	text-align: center;
+	border-radius: 100%;
+	font-size: 24px;
+	line-height: 17px;
+	padding-top: 12px;
+}
+
+.bollino {
+	position: relative;
+	height: 50px;
+	left: -20px;
+}
+
+.bollinoLabel {
+	text-transform: uppercase;
+	position: relative;
+	left: -60px;
+	top: 15px;
+	font-size: 17px;
+	color: white;
+	top: 15px;
+}

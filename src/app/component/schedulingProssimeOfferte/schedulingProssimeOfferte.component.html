@@ -1,0 +1,59 @@
+
+<h1>Schedula Prossime Offerte</h1>
+
+<img src="assets/icon.svg">
+
+<form class="padd-top-10 padd-bottom-10" [formGroup]="schedulingForm"
+	(ngSubmit)="onSubmit()">
+	<mat-form-field> <input matInput
+		placeholder="Cerca un prodotto"> </mat-form-field>
+	<div class="form-row">
+		<div class="form-group col-xs-4">
+			<label for="startHour" class="col-xs-2 col-form-label">Dalle</label>
+			<div class="col-xs-8 col-xs-offset-0-5">
+				<select class="form-control" formControlName="startHour"
+					[(ngModel)]="schedulingForm.startHour" required>
+					<option *ngFor="let ora of ore" [value]="ora.value">{{ora.descrizione}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group col-xs-4">
+			<label for="endHour" class="col-xs-2 col-form-label">Alle</label>
+			<div class="col-xs-8 col-xs-offset--0-5">
+				<select class="form-control" formControlName="endHour"
+					[(ngModel)]="schedulingForm.endHour" required>
+					<option *ngFor="let ora of ore" [value]="ora.value">{{ora.descrizione}}</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group col-xs-4">
+			<label for="eachHour" class="col-xs-2 col-form-label">Ogni</label>
+			<div class="col-xs-6 col-xs-offset--0-5">
+				<mat-form-field> <input matInput
+					[(ngModel)]="schedulingForm.eachHour" numberOnly type="text"
+					class="form-control" formControlName="eachHour" required></mat-form-field>
+			</div>
+			<div class="col-xs-1" *ngIf="schedulingForm.eachHour">
+				<div [ngSwitch]="schedulingForm.eachHour">
+					<div *ngSwitchCase="1">
+						<label class="col-form-label">Ora</label>
+					</div>
+					<div *ngSwitchDefault>
+						<label class="col-form-label">Ore</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 	<div *ngIf="idFornitore === '4'" class="form-group row">
+			<label for="altroFornitore" class="col-xs-2 col-form-label">Altro Fornitore</label>
+			<div class="col-xs-10">
+				<input type="text" class="form-control" formControlName="altroFornitore" required>
+			</div>
+		</div> -->
+	<div class="form-row">
+		<button type="submit" [disabled]="!schedulingForm.valid"
+			class="btn btn-success">Programma</button>
+	</div>
+</form>
+<button class="btn btn-success">Get</button>

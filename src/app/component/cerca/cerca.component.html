@@ -1,0 +1,8 @@
+<div class="container searchContainer" fxLayout fxLayoutAlign="center"
+	fxLayoutGap="10px">
+	<form [formGroup]="cercaProdottoForm" (ngSubmit)="onSubmit()"
+		class="width100Perc">
+		<input fxFlex formControlName="keywords" class="width100Perc search">
+		<button mat-button type="submit">Cerca</button>
+	</form>
+</div>

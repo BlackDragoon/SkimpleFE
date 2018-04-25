@@ -1,0 +1,43 @@
+<h1>Cerca Prodotto</h1>
+<form class="padd-top-10 padd-bottom-10" [formGroup]="prodottoForm"
+	(ngSubmit)="onSubmit()">
+	<div class="form-group">
+		<mat-form-field> <mat-select placeholder="Categoria"
+			formControlName="searchIndex" [(ngModel)]="searchIndex" required>
+		<mat-option *ngFor="let categoria of categorie"
+			[value]="categoria.name">{{categoria.name}}</mat-option> </mat-select></mat-form-field>
+	</div>
+	<div class="form-group">
+		<mat-form-field> <input matInput type="text"
+			class="form-control" formControlName="keywords" placeholder="Keyword"
+			required></mat-form-field>
+	</div>
+	<div class="form-group">
+		<button mat-button class="buttonVai" type="submit"
+			[disabled]="!prodottoForm.valid">Cerca</button>
+	</div>
+</form>
+<div *ngIf="selectedProduct">
+	<app-post-prodotto [prodotto]="selectedProduct"></app-post-prodotto>
+</div>
+<div class="row" *ngIf="listaProdotti">
+	<form class="padd-top-10 padd-bottom-10" [formGroup]="prodottoFilter"
+		(ngSubmit)="onSubmitFilter()">
+		<mat-form-field> <input matInput type="number"
+			class="form-control" formControlName="minFilterPrice"
+			placeholder="min"></mat-form-field>
+		&euro;
+		<mat-form-field> <input matInput type="number"
+			class="form-control" formControlName="maxFilterPrice"
+			placeholder="max"></mat-form-field>
+		&euro;
+		<div class="form-group">
+			<button mat-button class="buttonVai" type="submit">Filtra</button>
+		</div>
+	</form>
+	<div
+		*ngFor="let prodotto of listaProdotti | priceFilter:minPrice:maxPrice">
+		<app-prodotto (click)="onSelect(prodotto)" [prodotto]="prodotto"></app-prodotto>
+	</div>
+</div>
+

@@ -1,0 +1,25 @@
+.photo {
+	border-style: solid;
+	border-color: black;
+	border-radius: 50%;
+	min-width: 50px;
+	margin: 1%;
+	border-width: 1px;
+}
+
+.recen {
+	border-style: solid;
+	border-color: black;
+	border-radius: 15px;
+	padding-left: 5px;
+	border-width: 1px;
+}
+
+.recenPadd {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.minHeight70 {
+	min-height: 70px;
+}
