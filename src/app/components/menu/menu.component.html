@@ -1,0 +1,26 @@
+<div class="container menu" id="menu"
+	[ngClass]="{'sticky': offset >= menuHeight }" fxLayout
+	fxLayout.xs="
+	column" fxLayout.sm="column" fxLayoutAlign="center"
+	fxLayoutGap="10px" fxWrap="wrap">
+	<div fxLayoutAlign="center center">
+		<img routerLink="" *ngIf="offset >= menuHeight"
+			[ngClass]="{'logoMenu': offset >= menuHeight }"
+			src="assets/skimple.svg">
+	</div>
+	<div fxLayoutAlign="center center">
+		<button mat-button routerLink="/chiSiamo">Chi siamo</button>
+		<button mat-button routerLink="/categorie">Categorie</button>
+		<button mat-button routerLink="/contattaci">Contatti</button>
+		<button mat-button routerLink="/cercaProdotto">Cerca prodotto
+			Yuana</button>
+		<button mat-button routerLink="/schedule">Schedula Prossime
+			Offerte</button>
+	</div>
+	<div fxLayoutAlign="center center">
+		<img class="user" routerLink="/login"
+			src="assets/image/user_empty.svg">
+		<!-- <img
+			class="user" src="assets/image/user_full.svg"> -->
+	</div>
+</div>

@@ -1,0 +1,119 @@
+.fontSizeMerchant {
+	font-size: 14px;
+}
+
+.fontButton {
+	font-size: 14px;
+}
+
+.prezzoFinale {
+	font-size: 28px;
+	color: #1c8c3a;
+}
+
+.labelPrezzoRisparmiato {
+	font-size: 14px;
+	color: #1f2147;
+	font-weight: bold;
+}
+
+.prezzoRisparmiato {
+	font-size: 14px;
+	color: #1f2147;
+	font-weight: bold;
+}
+
+span.prezzoFinale>i {
+	font-size: 18px;
+}
+
+span.prezzoListino>i {
+	font-size: 14px;
+}
+
+span.prezzoRisparmiato>i {
+	font-size: 10px;
+}
+
+.prezzoListino {
+	font-size: 18px;
+	color: #c90e13;
+}
+
+.padd5 {
+	padding-bottom: 5px;
+}
+
+.paddLeft10 {
+	padding-left: 10px;
+}
+
+.anteprima {
+	font-size: 30px;
+}
+
+.anteprima:hover {
+	color: #1c8c3a;
+	/* transform: scale(1.4); */
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+.widthAndSpace {
+	width: 100%;
+	white-space: initial;
+	min-height: 10px;
+}
+
+.box-prodotto {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	min-height: 80px;
+	border-bottom: solid 1px lightgrey;
+	padding-bottom: 30px;
+	padding-top: 20px;
+}
+
+.minMaxHeight100 {
+	min-height: 150px;
+	max-height: 100px;
+}
+
+.templateOfferte:hover {
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 1px;
+	border-style: solid;
+	box-shadow: 0px 1px;
+	border-style: solid;
+	border-color: gray;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.bollino {
+	background-color: #e60000;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	position: absolute;
+	/* height: 80px; */
+	left: 120px;
+	margin-top: -20px;
+}
+
+.bollinoLabel {
+	text-transform: uppercase;
+	position: absolute;
+	/* left: 143px; */
+	left: 11px;
+	margin-top: 18px;
+	font-size: 15px;
+	color: white;
+	/* margin-top: 8px; */
+	font-size: 15px;
+	-webkit-transform: rotate(-13deg);
+}

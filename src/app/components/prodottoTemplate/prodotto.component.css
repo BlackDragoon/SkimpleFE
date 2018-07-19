@@ -1,0 +1,54 @@
+.fontSizeMerchant {
+	font-size: 14px;
+}
+
+.fontButton {
+	font-size: 14px;
+}
+
+span.prezzoFinale>i {
+	font-size: 16px;
+}
+
+span.prezzoListino>i {
+	font-size: 12px;
+}
+
+span.prezzoRisparmiato>i {
+	font-size: 12px;
+}
+
+.widthAndSpace {
+	width: 100%;
+	white-space: initial;
+	min-height: 10px;
+}
+
+.padd {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.box-prodotto {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	min-height: 80px;
+	border-bottom: solid 1px green;
+	padding-bottom: 30px;
+	padding-top: 20px;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+}
+
+.prezzoFinale {
+	font-size: 22px;
+	color: #1c8c3a;
+}
+
+.prezzoListino {
+	font-size: 14px;
+	color: #c90e13;
+}

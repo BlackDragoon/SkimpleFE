@@ -1,0 +1,26 @@
+.each {
+	padding-bottom: 10px;
+	padding-top: 15px;
+}
+
+.add {
+	color: #1c8c3a;
+	font-size: 40px;
+}
+
+.add:hover {
+	transform: scale(1.4);
+	cursor: pointer;
+	transition: all 0.5s;
+}
+
+.cancel {
+	color: #c90e13;
+	font-size: 40px;
+}
+
+.cancel:hover {
+	transform: scale(1.4);
+	cursor: pointer;
+	transition: all 0.5s;
+}

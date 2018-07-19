@@ -1,11 +1,21 @@
 <ng4-loading-spinner [zIndex]="9999"> </ng4-loading-spinner>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v3.0&appId=188542098570745&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <div>
 	<div id="primaryContainer" class="container">
 		<div class="container" fxLayout fxLayoutAlign="center">
-			<img src="assets/logo.svg">
+			<img routerLink="" id="logo" src="assets/skimple.svg">
 		</div>
 		<app-menu></app-menu>
 		<router-outlet></router-outlet>
 	</div>
-	<div class="container" fxLayout fxLayoutAlign="center">Footer</div>
+	<div class="container footer" fxLayout fxLayoutAlign="center">Footer</div>
 </div>
+
+

@@ -1,0 +1,39 @@
+form {
+	border-style: solid;
+	border-radius: 10px;
+	border-width: 1px;
+	border-color: lightgrey;
+	min-height: 500px;
+	min-width: 500px;
+	box-shadow: 0px 0px 10px 0px #888888;
+}
+
+.green {
+	color: #1c8f3b;
+}
+
+.blue {
+	color: #000054;
+}
+
+.container {
+	padding-top: 40px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.pointer:hover {
+	cursor: pointer;
+	transition: all 0.5s;
+	transform: scale(1.5);
+}
+
+::ng-deep .mat-input-wrapper {
+	width: 260px !important;
+}
+
+button {
+	width: 260px !important;
+}

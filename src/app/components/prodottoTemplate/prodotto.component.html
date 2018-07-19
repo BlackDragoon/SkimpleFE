@@ -1,0 +1,85 @@
+<div class="container box-prodotto" fxLayoutGap="10px" fxLayout="row">
+	<div fxLayoutAlign="center" fxFlex="20%" *ngIf="prodotto.multimedia[1]">
+		<a href={{prodotto.urlEsterna}} target="_blank"><img
+			src={{prodotto.multimedia[1].uri}} title={{prodotto.nomeProdotto}} /></a>
+	</div>
+	<div fxFlex="60%">
+		<span>{{prodotto.nomeProdotto}}</span> <span>{{prodotto.descrizioneBreve}}</span>
+	</div>
+	<!-- <div fxLayout="column" fxLayoutAlign="flex-end center" fxFlex="30%"
+		fxLayoutGap="5px">
+		<div class="container" fxLayout="row" fxLayoutGap="10px">
+			<div class="padd5">
+				<span class="prezzoFinale" *ngIf="prodotto.percentualeSalvata">{{prodotto.prezzoOfferta
+					| number:'1.2-2'}}<i class="material-icons">euro_symbol</i>
+				</span>
+			</div>
+			<div class="padd5">
+				<span class="strikethrough prezzoListino"
+					*ngIf="prodotto.percentualeSalvata">{{prodotto.prezzoListino
+					| number:'1.2-2'}}<i class="material-icons">euro_symbol</i>
+				</span> <span class="prezzoFinale" *ngIf="!prodotto.percentualeSalvata">{{prodotto.prezzoListino
+					| number:'1.2-2'}}<i class="material-icons">euro_symbol</i>
+				</span>
+			</div>
+		</div>
+		<div class="padd5" *ngIf="prodotto.percentualeSalvata">
+			<span>Stai risparmiando {{prodotto.prezzoRisparmiato |
+				number:'1.2-2'}}<i class="material-icons">euro_symbol</i>
+				({{prodotto.percentualeSalvata}}%)
+			</span>
+		</div>
+		<button mat-button class="buttonVai widthAndSpace">
+			<span class="fontButton">Scopri su </span><span
+				class="fontSizeMerchant">Amazon</span>
+		</button>
+		<button mat-button class="buttonVai fontButton widthAndSpace"
+			(click)="openDialog()">Posta</button>
+	</div> -->
+	<div class="templateVai minMaxHeight100" fxFlex="20%" fxLayout="column"
+		fxLayoutAlign="flex-end start">
+		<div class="container" fxLayout="row" fxLayoutGap="10px"
+			fxLayoutAlign="flex-end center">
+			<!-- Se c'è percentuale allora prezzo dell'offerta -->
+			<div class="padd5" *ngIf="prodotto.percentualeSalvata">
+				<span class="prezzoFinale paddLeft10">{{prodotto.prezzoOfferta
+					| number:'1.2-2'}}<i class="material-icons">euro_symbol</i>
+				</span>
+			</div>
+			<div class="padd5">
+				<!-- Se c'è percentuale allora prezzo Listino -->
+				<span class="strikethrough prezzoListino"
+					*ngIf="prodotto.percentualeSalvata">{{prodotto.prezzoListino
+					| number:'1.2-2'}}<i class="material-icons">euro_symbol</i>
+				</span>
+				<!-- Se NON c'è percentuale allora solo prezzo Listino visibile -->
+				<span class="prezzoFinale paddLeft10"
+					*ngIf="!prodotto.percentualeSalvata">{{prodotto.prezzoListino
+					| number:'1.2-2'}}<i class="material-icons">euro_symbol</i>
+				</span>
+			</div>
+
+		</div>
+		<!-- Label per Risparmi prezzo e percentuale -->
+		<div class="padd5 paddLeft10">
+			<span class="prezzoRisparmiato" *ngIf="prodotto.percentualeSalvata">Risparmi
+				{{prodotto.prezzoRisparmiato | number:'1.2-2'}}<i
+				class="material-icons">euro_symbol</i>
+				({{prodotto.percentualeSalvata}}%)
+			</span> <span class="prezzoRisparmiato" *ngIf="!prodotto.percentualeSalvata">Prezzo
+				di listino per ora </span>
+		</div>
+		<div class="padd5" fxLayout="column" fxLayoutGap="10px"
+			fxLayoutAlign="flex-end center">
+			<!--  Bottone Scopri su Amazon -->
+			<button mat-button class="buttonVai widthAndSpace">
+				<span class="fontButton">Scopri su </span><span
+					class="fontSizeMerchant">Amazon</span>
+			</button>
+			<button mat-button class="buttonVai fontButton widthAndSpace"
+				(click)="openDialog()">Posta</button>
+		</div>
+	</div>
+</div>
+
+

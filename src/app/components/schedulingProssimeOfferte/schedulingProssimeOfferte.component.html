@@ -1,0 +1,73 @@
+<div class="container midSection">
+	<div fxLayout="row" fxLayoutGap="20px">
+		<div fxFlex="50%">
+			<h1>Schedula Prossime Offerte</h1>
+			<form class="padd-top-10 padd-bottom-10" [formGroup]="schedulingForm"
+				(ngSubmit)="onSubmit()">
+				<div fxLayout="row" fxLayoutGap="20px">
+					<mat-form-field> <input matInput
+						[(ngModel)]="schedulingForm.name" type="text" class="form-control"
+						formControlName="name" placeholder="Nome Job" required></mat-form-field>
+					<mat-form-field> <mat-select placeholder="Tipo"
+						formControlName="type" [(ngModel)]="schedulingForm.type" required>
+					<mat-option *ngFor="let tipo of tipi" [value]="tipo.value">{{tipo.descrizione}}</mat-option>
+					</mat-select> </mat-form-field>
+				</div>
+
+				<div fxLayout="row" fxLayoutGap="20px">
+					<label class="each">Ogni quanto?</label>
+				</div>
+				<div fxLayout="row" fxLayoutGap="20px">
+					<mat-form-field> <input matInput
+						[(ngModel)]="schedulingForm.eachHour" numberOnly type="text"
+						class="form-control" formControlName="eachHour" placeholder="Ore"
+						required></mat-form-field>
+					<mat-form-field> <input matInput
+						[(ngModel)]="schedulingForm.eachMinute" numberOnly type="text"
+						class="form-control" formControlName="eachMinute"
+						placeholder="Minuti" required></mat-form-field>
+					<mat-form-field> <input matInput
+						[(ngModel)]="schedulingForm.eachSecond" numberOnly type="text"
+						class="form-control" formControlName="eachSecond"
+						placeholder="Secondi" required></mat-form-field>
+				</div>
+				<button mat-button class="buttonVai" type="submit"
+					[disabled]="!schedulingForm.valid">Programma</button>
+			</form>
+		</div>
+		<div fxFlex="50%">
+			<h1>Lista Jobs</h1>
+			<mat-table [dataSource]="dataSource"> <ng-container
+				matColumnDef="jobName"> <mat-header-cell
+				*matHeaderCellDef>Nome Job</mat-header-cell> <mat-cell
+				*matCellDef="let job">{{job.jobName}}</mat-cell> </ng-container> <ng-container
+				matColumnDef="jobGroup"> <mat-header-cell
+				*matHeaderCellDef>Gruppo Job</mat-header-cell> <mat-cell
+				*matCellDef="let job">{{job.jobGroup}}</mat-cell> </ng-container> <ng-container
+				matColumnDef="each"> <mat-header-cell
+				*matHeaderCellDef>Ogni (mm:hh:ss)</mat-header-cell> <mat-cell
+				*matCellDef="let job">{{job.hours |
+			number:'2.0'}}:{{job.minutes| number:'2.0'}}:{{job.seconds|
+			number:'2.0'}}</mat-cell> </ng-container> <ng-container matColumnDef="plus"> <mat-header-cell
+				*matHeaderCellDef></mat-header-cell> <mat-cell *matCellDef="let job">
+			<i class="material-icons add" (click)="openDialog(job)"> add </i></mat-cell> </ng-container> <ng-container
+				matColumnDef="cancel"> <mat-header-cell
+				*matHeaderCellDef></mat-header-cell> <mat-cell *matCellDef="let job">
+			<i class="material-icons cancel" (click)="clear(job.id)"> clear </i></mat-cell>
+			</ng-container> <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+			<mat-row *matRowDef="let row; columns: displayedColumns"></mat-row> </mat-table>
+			<h1>Lista Jobs Attivi</h1>
+			<mat-table [dataSource]="dataSourcerReq"> <ng-container
+				matColumnDef="jobName"> <mat-header-cell
+				*matHeaderCellDef>Nome Job</mat-header-cell> <mat-cell
+				*matCellDef="let job">{{job.jobName}}</mat-cell> </ng-container> <ng-container
+				matColumnDef="startDate"> <mat-header-cell
+				*matHeaderCellDef>Data inizio</mat-header-cell> <mat-cell
+				*matCellDef="let job">{{job.startDate}}</mat-cell> </ng-container> <ng-container
+				matColumnDef="endDate"> <mat-header-cell
+				*matHeaderCellDef>Data fine</mat-header-cell> <mat-cell
+				*matCellDef="let job">{{job.endDate}}</mat-cell> </ng-container> <mat-header-row
+				*matHeaderRowDef="displayerColumnsReq"></mat-header-row> <mat-row
+				*matRowDef="let row; columns: displayerColumnsReq"></mat-row> </mat-table>
+		</div>
+	</div>

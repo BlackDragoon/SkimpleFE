@@ -1,0 +1,36 @@
+<h3 mat-dialog-title>{{job.jobName}}</h3>
+<div mat-dialog-content>
+
+	<div class="container" fxLayout="row" fxLayoutAlign="center">
+		<div fxLayout="column" fxLayoutAlign="center">
+			<form class="padd-top-10 padd-bottom-10"
+				[formGroup]="attivaJobForm" (ngSubmit)="onSubmit()">
+				<mat-form-field> <input matInput
+					[(ngModel)]="attivaJobForm.startDate" [matDatepicker]="dalPicker"
+					placeholder="Dal giorno" formControlName="startDate"> <mat-datepicker-toggle matSuffix
+					[for]="dalPicker"></mat-datepicker-toggle> <mat-datepicker
+					#dalPicker></mat-datepicker> </mat-form-field>
+				<mat-form-field> <input matInput
+					[(ngModel)]="attivaJobForm.endDate" [matDatepicker]="alPicker"
+					placeholder="Al giorno" formControlName="endDate"> <mat-datepicker-toggle matSuffix
+					[for]="alPicker"></mat-datepicker-toggle> <mat-datepicker #alPicker></mat-datepicker>
+				</mat-form-field>
+				<mat-form-field> <mat-select placeholder="Dalle"
+					formControlName="startHour" [(ngModel)]="attivaJobForm.startHour"
+					 required> <mat-option
+					*ngFor="let ora of ore" [value]="ora.value">{{ora.descrizione}}</mat-option>
+				</mat-select></mat-form-field>
+				<mat-form-field> <mat-select placeholder="Alle"
+					formControlName="endHour" [(ngModel)]="attivaJobForm.endHour"
+					 required> <mat-option
+					*ngFor="let ora of ore" [value]="ora.value">{{ora.descrizione}}</mat-option>
+				</mat-select></mat-form-field>
+
+			</form>
+		</div>
+	</div>
+</div>
+<div mat-dialog-actions fxLayout="row" fxLayoutAlign="center">
+	<button mat-button type="submit" [disabled]="!attivaJobForm.valid"
+		class="buttonVai" cdkFocusInitial>Attiva</button>
+</div>

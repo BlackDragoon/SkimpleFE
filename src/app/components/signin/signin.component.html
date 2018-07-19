@@ -1,0 +1,35 @@
+<div class="container" fxLayout fxLayoutAlign="center center">
+	<form [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+		<div fxLayoutGap="15px" fxLayout="column"
+			fxLayoutAlign="center center" class="container">
+			<h1 class="green">Benvenuto!</h1>
+			<div>
+				<label class="green bold">Registrati </label><label class="blue">per
+					un'esperienza completa</label>
+			</div>
+			<div class="form-group">
+				<mat-form-field> <input matInput type="text"
+					class="form-control" formControlName="email" placeholder="Email"
+					required></mat-form-field>
+			</div>
+			<div class="form-group">
+				<mat-form-field> <input matInput type="text"
+					class="form-control" formControlName="password"
+					placeholder="Password" required></mat-form-field>
+			</div>
+			<div class="form-group">
+				<mat-form-field> <input matInput type="text"
+					class="form-control" formControlName="confermaPassword"
+					placeholder="Conferma password" required></mat-form-field>
+			</div>
+			<div class="form-group">
+				<button mat-button class="buttonVai" type="submit"
+					[disabled]="!signinForm.valid"></button>
+			</div>
+			<div class="form-group">
+				<label class="blue">Sei gi&agrave; registrato?</label><label
+					routerLink="/login" class="pointer green"> Accedi</label>
+			</div>
+		</div>
+	</form>
+</div>

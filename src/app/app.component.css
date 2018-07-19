@@ -33,3 +33,23 @@
 #primaryContainer {
 	min-height: 800px;
 }
+
+#logo {
+	height: 95px;
+	transition: all 300ms;
+	padding-top: 10px;
+}
+
+#logo:hover {
+	cursor: pointer;
+}
+
+#logo:focus {
+	outline: none;
+}
+
+.footer {
+	min-height: 100px;
+	background-color: #1f2147;
+}
+

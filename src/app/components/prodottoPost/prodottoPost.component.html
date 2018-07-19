@@ -1,0 +1,54 @@
+
+<h3 mat-dialog-title>{{prodotto.nomeProdotto}}</h3>
+<div mat-dialog-content>
+	<div class="container" fxLayout="row" fxLayoutAlign="center">
+		<div fxLayoutAlign="center" fxFlex="50%"
+			*ngIf="prodotto.multimedia[1]">
+			<a href={{prodotto.urlEsterna}} target="_blank"><img
+				src={{prodotto.multimedia[1].uri}} title={{prodotto.nomeProdotto}} /></a>
+		</div>
+		<div fxLayout="column" fxLayoutAlign="center" fxFlex="50%">
+			<mat-slide-toggle [(ngModel)]="telegram">Telegram</mat-slide-toggle>
+			<mat-slide-toggle [(ngModel)]="facebook">Facebook</mat-slide-toggle>
+			<mat-slide-toggle [(ngModel)]="instagram">Instagram</mat-slide-toggle>
+			<mat-slide-toggle [(ngModel)]="twitter">Twitter</mat-slide-toggle>
+			<mat-slide-toggle [(ngModel)]="pinterest">Pinterest</mat-slide-toggle>
+		</div>
+	</div>
+	<div class="container" fxLayout="row" fxLayoutAlign="center">
+		<div fxLayout="column" fxLayoutAlign="center">
+			<form class="padd-top-10 padd-bottom-10"
+				[formGroup]="postProdottoForm" (ngSubmit)="onSubmit()">
+				<div class="form-group">
+					<mat-form-field class="full-width"> <textarea
+						matInput class="form-control full-width" formControlName="text"
+						placeholder="Testo" required></textarea></mat-form-field>
+				</div>
+				<div class="form-group">
+					<mat-form-field class="full-width"> <mat-chip-list
+						#chipList> <mat-chip
+						*ngFor="let hashtag of hashtags" [selectable]="selectable"
+						[removable]="removable" (remove)="remove(hashtag)">
+					{{hashtag.name}} <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+					</mat-chip> <input placeholder="Hashtag" [matChipInputFor]="chipList"
+						[matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+						[matChipInputAddOnBlur]="addOnBlur"
+						(matChipInputTokenEnd)="add($event)" /> </mat-chip-list> </mat-form-field>
+				</div>
+				<div fxLayout="row" fxLayoutAlign="flex-end center">
+					<mat-form-field> <input matInput type="text"
+						class="form-control full-width" formControlName="linkSx"
+						placeholder="Sx Link"></mat-form-field>
+					<label class="padd-left-10 padd-right-10">www.example.it</label>
+					<mat-form-field class="full-width"> <input
+						matInput type="text" formControlName="linkDx"
+						placeholder="Dx Link"></mat-form-field>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div mat-dialog-actions fxLayout="row" fxLayoutAlign="center">
+	<button mat-button type="submit" (click)="onSubmit()" [disabled]="!postProdottoForm.valid"
+		class="buttonVai" cdkFocusInitial>Posta</button>
+</div>

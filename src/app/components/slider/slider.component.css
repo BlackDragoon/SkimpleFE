@@ -1,0 +1,21 @@
+img {
+	height: 300px;
+	box-shadow: 0px 0px 10px 1px #888888;
+}
+
+.slider {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+i {
+	font-size: 60px;
+	color: lightgrey;
+}
+
+i:hover {
+	color: #000054;
+	transform: scale(1.4);
+	cursor: pointer;
+	transition: all 0.5s;
+}

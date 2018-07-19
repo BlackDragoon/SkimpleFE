@@ -1,0 +1,67 @@
+
+<div class="box-prodotto container" fxLayout="row"
+	fxLayoutAlign="center">
+	<div class="minMaxHeight100" fxFlex="50%" fxLayoutAlign="center"
+		*ngIf="prodotto.multimedia[0]">
+		<a href={{prodotto.urlEsterna}} target="_blank"><img
+			src={{prodotto.multimedia[1].uri}} title={{prodotto.nomeProdotto}} />
+		</a>
+		<!-- <img
+			*ngIf="prodotto.percentualeSalvata>50 && prodotto.percentualeSalvata != null"
+			class="bollino" src="assets/red_circle.svg"> <img
+			*ngIf="prodotto.percentualeSalvata<=50 && prodotto.percentualeSalvata != null"
+			class="bollino" src="assets/simboloStella.svg"><span
+			*ngIf="prodotto.percentualeSalvata != null" class="bollinoLabel">-{{prodotto.percentualeSalvata}}%</span> -->
+		<!-- <div class="bollino">
+			<span class="bollinoLabel">- {{prodotto.percentualeSalvata}}%</span>
+		</div> -->
+	</div>
+	<div class="templateVai minMaxHeight100" fxFlex="50%" fxLayout="column"
+		fxLayoutAlign="flex-end start">
+		<div class="container" fxLayout="row" fxLayoutGap="10px"
+			fxLayoutAlign="flex-end center">
+			<!-- Se c'è percentuale allora prezzo dell'offerta -->
+
+			<div class="paddLeft10">
+				<!-- Se c'è percentuale allora prezzo Listino -->
+				<span class="strikethrough prezzoListino"
+					*ngIf="prodotto.percentualeSalvata">{{prodotto.prezzoListino
+					| number:'1.2-2'}}<i class="material-icons">euro_symbol</i>
+				</span>
+				<!-- Se NON c'è percentuale allora solo prezzo Listino visibile -->
+				<span class="prezzoFinale paddLeft10"
+					*ngIf="!prodotto.percentualeSalvata">{{prodotto.prezzoListino
+					| number:'1.2-2'}}<i class="material-icons">euro_symbol</i>
+				</span>
+			</div>
+			<div class="padd5" *ngIf="prodotto.percentualeSalvata">
+				<span class="prezzoFinale">{{prodotto.prezzoOfferta
+					| number:'1.2-2'}}<i class="material-icons">euro_symbol</i>
+				</span>
+			</div>
+
+		</div>
+		<!-- Label per Risparmi prezzo e percentuale -->
+		<div class="padd5 paddLeft10">
+			<span class="labelPrezzoRisparmiato"
+				*ngIf="prodotto.percentualeSalvata">Risparmi</span> <span
+				class="prezzoRisparmiato" *ngIf="prodotto.percentualeSalvata">{{prodotto.prezzoRisparmiato
+				| number:'1.2-2'}}<i class="material-icons">euro_symbol</i>
+				(-{{prodotto.percentualeSalvata}}%)
+			</span> <span class="prezzoRisparmiato" *ngIf="!prodotto.percentualeSalvata">Prezzo
+				di listino per ora </span>
+		</div>
+		<div class="padd5" fxLayoutAlign="flex-end center">
+			<!-- Icona Anteprima -->
+			<i fxLayoutAlign="center" fxFlex="30%"
+				class="material-icons anteprima">visibility</i>
+			<!--  Bottone Scopri su Amazon -->
+			<div fxFlex="70%">
+				<button mat-button class="buttonVai">
+					<span class="fontButton">Scopri su </span><span
+						class="fontSizeMerchant">Amazon</span>
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
